@@ -1,0 +1,154 @@
+24/06/2025 :
+
+
+// Calculate Sum and Average :
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      
+    Scanner sc = new Scanner(System.in);
+        int[] arr1 = {10, 20, 30, 40, 50};
+        int[] arr2 = {60, 70, 80, 90, 100};
+        int[] arr3 = new int[arr1.length];
+        for (int i = 0; i < arr1.length; i++) {
+            arr3[i] = arr1[i] + arr2[i];
+            System.out.println(arr3[i]);
+        }
+    }
+}
+// Mean and Mode :
+
+// Even Or Odd : 
+
+import java.util.*;
+
+public class numberofevenandven {
+    public static void main(String args[]){
+        int[] arr={1, 2, 3, 4, 5, 6};
+        int n=arr.length;
+        int odd=0;
+        int even=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]%2==0)
+            even++;
+            else
+            odd++;
+        }
+        System.out.println(even);
+        System.out.println(odd);
+    }
+}
+
+
+
+// Sorted Array in Ascending Order : 
+
+public class sorting {
+    public static boolean sort(int[] arr){
+        int n=arr.length;
+        for(int i=0;i<n-1;i++){
+            if(arr[i]>arr[i+1])
+            return false;
+        }
+        return true;
+    }
+    public static void main(String args[]){
+        int[] arr={2,4,6,8,10};
+        System.out.println(sort(arr));
+    }
+}
+
+
+//  Duplicate Array : 
+
+public class duplicate {
+    public static void main(String args[]) {
+        int[] arr = {1, 2, 3, 4, 5, 1, 2};
+        int n = arr.length;
+
+        int[] values = new int[n];
+        int[] counts = new int[n];
+        int size = 0;
+
+        for (int i = 0; i < n; i++) {
+            boolean found = false;
+            for (int j = 0; j < size; j++) {
+                if (values[j] == arr[i]) {
+                    counts[j]++;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                values[size] = arr[i];
+                counts[size] = 1;
+                size++;
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (counts[i] > 1) {
+                System.out.println(values[i]);
+            }
+        }
+    }
+}
+
+// 23/06/2025 :
+
+// Reverse a Array :
+import java.util.*;
+public class reverse {
+    public static void main(String args[]){
+        int[] arr={1,2,3,4,5};
+        int n=arr.length;
+        int[] a=new int[n];
+        int c=n;
+        for(int i=0;i<n;i++){
+            a[i]=arr[c-1];
+            c=c-1;
+            
+        }
+        for(int i=0;i<n;i++)
+        System.out.print(a[i]+" ");
+    }
+}
+
+// Minimum and Maximum
+import java.util.*;
+public class minmax {
+    public static void main(String args[]){
+        int[] arr={4,1,8,10,2};
+        int n=arr.length;
+        int min=arr[0];
+        int max=arr[0];
+        for(int i=1;i<n-1;i++){
+            if(min>arr[i])
+            min=arr[i];
+            if(max<arr[i])
+            max=arr[i];
+        }
+        System.out.println(max);
+        System.out.print(min);
+    }
+}
+
+// Array's Addition :
+
+import java.util.*;
+
+public class arrayaddition {
+    public static void main(String args[]){
+        int[] arr1={1,2,3,4,5};
+        int[] arr2={5,6,7,8,9,10};
+        int[] arr3=new int[5];
+        for(int i=0;i<5;i++){
+            arr3[i]=arr1[i]+arr2[i];
+        }
+        for(int i=0;i<5;i++)
+        System.out.print(arr3[i]+" ");
+    }
+}
+
