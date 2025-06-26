@@ -253,3 +253,62 @@ class Solution {
     }
 }
 
+//Merge Sort :  
+
+import java.util.*;
+
+public class Main
+{
+	public static void mergeSort(int[] arr, int start, int end) {
+	    if (start < end) {
+	        int mid = (start + end) / 2;
+	        mergeSort(arr, start, mid);
+	        mergeSort(arr, mid + 1, end);
+	        merge(arr, start, mid, end);
+	    }
+	}
+	private static void merge(int[] arr, int start, int mid, int end) {
+	    int n1 = mid - start + 1;
+	    int n2 = end - mid;
+	    int[] startArr = new int[n1];
+	    int[] endArr = new int[n2];
+	    for (int i = 0; i < n1; i++) 
+	        startArr[i] = arr[start + i];
+	    
+	    for (int j = 0; j < n2; j++) 
+	        endArr[j] = arr[mid + 1 + j];
+	        
+	    int i = 0;
+	    int j = 0;
+	    int k = start;
+	    
+	    while (i < n1 && j < n2) {
+	        if (startArr[i] <= endArr[j]) {
+	            arr[k] = startArr[i];
+	            i++;
+	        }
+	        else {
+	            arr[k] = endArr[j];
+	            j++;
+	        }
+	        k++;
+	    }
+	    while(i < n1) {
+	        arr[k] = startArr[i];
+	        i++;
+	        k++;
+	    }
+	    while (j < n2) {
+	        arr[k] = endArr[j];
+	        j++;
+	        k++;
+	    }
+	}
+	public static void main(String[] args) {
+	    int[] arr = {45, 67, 8, 39, 20, 1, 34, 12, 18};
+	    mergeSort(arr, 0, arr.length - 1);
+	    for (int num : arr) {
+	        System.out.print(num + " ");
+	    }
+	}
+}
